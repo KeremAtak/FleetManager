@@ -3,37 +3,38 @@
 # Vehicles-table
 /api/vehicles
 
-/get
+GET: /
 
-/get/:id
+GET: /:id
 
-/post
+POST: /post
 
-/put/:id
+PUT: /:id
 
-/delete/:id
+DELETE: /:id
 
-/brand/:id
+GET: /brand/:brand
 
-/model/:id
+GET: /model/:model
 
-/year/:min/:max
+GET: /year/:min/:max
 
 # Models-table
 /api/models
 
-/get
+GET: /
 
-/get/:id
+GET: /:id
 
-/post
+POST: /post
 
-/put/:id
+PUT: /:id
 
-/delete/:id
+DELETE: /:id
 
-/brand/:id
+GET: /brand/:brand
 
-/model/:id
+GET: /model/:model
 
-/year/:min/:max
+GET: /year/:min/:max
+
