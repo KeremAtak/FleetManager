@@ -21,7 +21,7 @@ ALTER USER postgres WITH password 'password';
 
 Now we've configured our database. If you want to create your own configuration make sure that you update /config/config.js.
 
-Step 3: Launch the server with start_server.sh on the first time, it will delete any existing tables, recreate them and insert the test data. You can launch with npm run watch without removing the data.
+Step 3: Launch the server with start_server.sh on the first time, it will delete any existing tables, recreate them and insert the test data. The server will start at http://localhost:3001/. You can launch with npm run watch without removing the data.
 
 # Models-table
 GET: /api/models/
