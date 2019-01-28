@@ -56,6 +56,8 @@ Insert following data as raw JSON on postman:
     "engine_power": 150
 }
 
+![model-post](images/model-post.png)
+
 PUT: /api/models/:id
 Updates a single model in the fleet where the id is a parameter
 
@@ -68,8 +70,14 @@ Insert following data as raw JSON on postman with 1
     "engine_power": 176
 }
 
+
+![model-put](images/model-put.png)
+
 DELETE: /api/models/:id
 Deletes a single model from the fleet where the id is a parameter
+
+
+![model-delete](images/model-delete.png)
 
 GET: /api/models/brand/:brand
 Fetches all models where the name of the brand is brand-parameter.
