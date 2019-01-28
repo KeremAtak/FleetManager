@@ -19,9 +19,9 @@ sudo -u postgres psql
 Add a password for the default user 'postgres' with the following query:
 ALTER USER postgres WITH password 'password';
 
-Now we've configured our database. If you want to create your own configuration make sure that you update /config/pool.js.
+Now we've configured our database. If you want to create your own configuration make sure that you update /config/config.js.
 
-Step 3: We've created the server. Launch the server with start_server.sh on the first time, it will delete any existing tables, recreate them and insert the test data. You can launch with npm run watch without removing the data.
+Step 3: Launch the server with start_server.sh on the first time, it will delete any existing tables, recreate them and insert the test data. You can launch with npm run watch without removing the data.
 
 # Models-table
 GET: /api/models/
