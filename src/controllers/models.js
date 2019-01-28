@@ -1,7 +1,7 @@
 const modelsRouter = require('express').Router()
 
 // Gets pooling from utils
-const pool = require('../utils/pool').pool
+const pool = require('../utils/config').pool
 
 // Fetches all the vehicles
 modelsRouter.get('/', async (request, response) => {
