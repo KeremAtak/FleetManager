@@ -21,20 +21,7 @@ ALTER USER postgres WITH password 'password';
 
 Now we've configured our database. If you want to create your own configuration make sure that you update /config/pool.js.
 
-CREATE TABLE public.models( id SERIAL, brand character(255) NOT NULL, model character(255) NOT NULL, model_year integer NOT NULL, engine_displacement integer, engine_power integer NOT NULL, CONSTRAINT models_pkey PRIMARY KEY (id));
-
-CREATE TABLE public.vehicles(id SERIAL, registration_number character(7), inspection_date date, model_id integer, CONSTRAINT vehicles_pkey PRIMARY KEY(id), CONSTRAINT vehicles_model_id_fkey FOREIGN KEY (model_id) REFERENCES public.models(id) MATCH SIMPLE ON UPDATE CASCADE ON DELETE CASCADE);
-
-INSERT INTO public.models values(1000, 'Toyota', 'Corolla', 1997, 1600, 96);
-INSERT INTO public.models values(1001, 'Toyota', 'Avensis', 2005, 1800, 99);
-INSERT INTO public.models values(1002, 'Toyota', 'Supra', 2005, 3100, 450);
-INSERT INTO public.models values(1003, 'Nissan', 'Leaf', 2017, null, 99);
-INSERT INTO public.models values(1004, 'Renault', 'Megane', 2006, 1600, 89);
-
-INSERT INTO public.vehicles values(2000, 'ABC-123', '2011-09-13', 1000);
-INSERT INTO public.vehicles values(2001, 'DEF-456', '2002-10-01', 1000);
-INSERT INTO public.vehicles values(2002, 'NFS-900', null, 1002);
-INSERT INTO public.vehicles values(2003, 'KRP-112', null, 1003);
+Step 3: We've created the server. Launch the server with start_server.sh on the first time, it will delete any existing tables, recreate them and insert the test data. You can launch with npm run watch without removing the data.
 
 # Models-table
 GET: /api/models/
