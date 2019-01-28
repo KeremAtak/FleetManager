@@ -10,6 +10,7 @@ server.use(require('./utils/middleware').logger)
 
 //these are the controller(s) that the server uses
 server.use('/api/vehicles', require('./controllers/vehicles'))
+server.use('/api/models', require('./controllers/models'))
 
 server.get('/', (request, response) => {
     response.json({ message: 'FleetManager API' })
