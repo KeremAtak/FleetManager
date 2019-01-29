@@ -1,7 +1,7 @@
 CREATE TABLE public.models( 
     id SERIAL,
-    brand character(255) NOT NULL, 
-    model character(255) NOT NULL, 
+    brand varchar(255) NOT NULL, 
+    model varchar(255) NOT NULL, 
     model_year integer NOT NULL, 
     engine_displacement integer, 
     engine_power integer NOT NULL, 
@@ -11,7 +11,7 @@ CREATE TABLE public.models(
 
 CREATE TABLE public.vehicles(
     id SERIAL, 
-    registration_number character(7), 
+    registration_number varchar(7), 
     inspection_date date, 
     model_id integer, 
     CONSTRAINT vehicles_pkey 

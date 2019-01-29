@@ -10,7 +10,7 @@ modelsRouter.get('/', async (request, response) => {
         response.status(200).json(res.rows)
     } catch (err) {
         // In case of an error that the program fails to catch
-        response.status(500).json({ error: err })
+        response.status(500).json({ error: 'something went wrong' })
     }
 })
 
@@ -55,8 +55,8 @@ modelsRouter.post('/', async (request, response) => {
 
         response.status(201).send({ response: res.rows });
     } catch (err) {
-        // In case of an error that the  program fails to catch
-        response.status(500).json({ error: err })
+        // In case of an error that the program fails to catch
+        response.status(500).json({ error: 'something went wrong' })
     }
 })
 
