@@ -4,9 +4,9 @@ The provided task is done with Node.js and Postgresql.
 
 My solution has two tables; Models and Vehicles. 
 
-Model represents an entity which contains general information about the vehicle. A single car dealership could have dozens of vehicles of the same model (or a factory could have thousands of them), and it would be inefficient to have same information on several tables if it stays the same.
+Models represents entities which contains general information about the vehicle. A single car dealership could have dozens of vehicles of the same model (or a factory could have thousands of them), and it would be inefficient to have same information on several tables if it stays the same.
 
-Vehicle contains the information that makes it unique. Currently it has registration number, inspection date and a foreign key referring which car it represents. This table is joined with Models in the backend.
+Vehicles contains information that makes vehicles unique. Currently it has registration number, inspection date and a foreign key referring which to the car it represents. This table is joined with Models in the backend.
 
 ![diagram](images/diagram.png)
 
