@@ -2,7 +2,7 @@
 
 The provided task is done with Node.js and Postgresql. 
 
-My solution has two tables; Models and Vehicles. The original solution that I had developed (can be found on older commits) had a single table, and this could be a better solution if the cars are mostly unique. However we're going to make some assumptions that this is a big fleet with lots of cars of the same model; it's also why I picked Postgres.
+My solution has two tables; Models and Vehicles. The original solution that I had developed (can be found on older commits) had a single table, and this could be a better solution if the cars are mostly unique. However we're going to make the assumption that this is a big fleet with lots of cars of the same model; it's also why I picked Postgres.
 
 Models represents entities which contains general information about the vehicle. A single car dealership could have dozens of vehicles of the same model (or a factory with thousands of them), and it would be inefficient to have same information on several tables if it stays the same. 
 
