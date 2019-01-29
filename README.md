@@ -1,10 +1,18 @@
 # FleetManager
 
+The provided task is done with Node.js and Postgresql. 
+
+My solution has two tables; Models and Vehicles. 
+
+Model represents an entity which contains general information about the vehicle. A single car dealership could have dozens of vehicles of the same model (or a factory could have thousands of them), and it would be inefficient to have same information on several tables if it stays the same.
+
+Vehicle contains the information that makes it unique. Currently it has registration number, inspection date and a foreign key referring which car it represents. This table is joined with Models in the backend.
+
 ![diagram](images/diagram.png)
 
 
 # Installation
-Following instructions are directed for linux.
+Following instructions are primarily meant for Linux.
 
 Step 1: Install postgres to your system. Instructions can be found here: https://www.postgresql.org/download/
 
@@ -36,7 +44,7 @@ This will fetch a single model in the fleet where the id is a parameter
 POST: /api/models/
 Post will create a new model to the fleet. This can be joined with vehicles-table to create a new vehicle.
 
-Insert following data as raw JSON on postman:
+Insert following data as raw JSON on Postman:
 
 {
     "brand": "BMW",
@@ -51,7 +59,7 @@ Insert following data as raw JSON on postman:
 PUT: /api/models/:id
 Updates a single model in the fleet where the id is a parameter
 
-Insert following data as raw JSON on postman with 1
+Insert following data as raw JSON on Postman
 {
     "brand": "BMW",
     "model": "316i",
@@ -100,7 +108,7 @@ Insert following data as raw JSON on postman:
 
 PUT: /api/vehicles/:id
 Updates a single model in the fleet where the id is a parameter
-Insert following data as raw JSON on postman with 1
+Insert following data as raw JSON on postman
 
 {
 	"registration_number": "ABC-123",
