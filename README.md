@@ -23,7 +23,7 @@ Step 1: Clone the project, run npm install. Install postgres to your system. Ins
 Step 2:
 Configuring postgres can be a hassle, but I hope these instructions are found useful. Our configuration uses default user 'postgres' with password 'password'.
 
-Search for pg_hba.conf file. On Linux it should be located in /etc/postgresql/9.3/main/pg_hba.conf. Open it and locate the following line:
+Search for pg_hba.conf file. On Linux it should be located in /etc/postgresql/10/main/pg_hba.conf. Open it and locate the following line:
 
 local all postgres md5
 
