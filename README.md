@@ -2,9 +2,9 @@
 
 The provided task is done with Node.js and Postgresql. 
 
-My solution has two tables; Models and Vehicles. 
+My solution has two tables; Models and Vehicles. The original solution that I had developed (can be found on older commits) had a single table, and this could be a better solution if the cars are mostly unique. However we're going to make some assumptions that this is a big fleet with lots of cars of the same model; it's also why I picked Postgres.
 
-Models represents entities which contains general information about the vehicle. A single car dealership could have dozens of vehicles of the same model (or a factory could have thousands of them), and it would be inefficient to have same information on several tables if it stays the same. 
+Models represents entities which contains general information about the vehicle. A single car dealership could have dozens of vehicles of the same model (or a factory with thousands of them), and it would be inefficient to have same information on several tables if it stays the same. 
 
 Id, brand, model, model_year and engine_power mustn't be null, engine_displacement isn't null because it could be an electric car for example.
 
@@ -18,15 +18,19 @@ Id, registration_number and model_id mustn't be null, inspection_date can be nul
 # Installation
 Following instructions are primarily meant for Linux.
 
-Step 1: Install postgres to your system. Instructions can be found here: https://www.postgresql.org/download/
+Step 1: Clone the project, run npm install. Install postgres to your system. Instructions can be found here: https://www.postgresql.org/download/
 
 Step 2:
-Our configuration uses default user 'postgres' with password 'password.
+Configuring postgres can be a hassle, but I hope these instructions are found useful. Our configuration uses default user 'postgres' with password 'password'.
+
 Search for pg_hba.conf file. On Linux it should be located in /etc/postgresql/9.3/main/pg_hba.conf. Open it and locate the following line:
+
 local all postgres md5
 
 Make sure that it's 'md5', and not something else. This will allow us to use server connection locally.
 Restart the server: sudo service postgresql restart.
+
+Step 3:
 
 Open the database editor with the following command:
 sudo -u postgres psql
@@ -36,7 +40,7 @@ ALTER USER postgres WITH password 'password';
 
 Now we've configured our database. If you want to create your own configuration make sure that you update /utils/config.js.
 
-Step 3: Launch the server with start_server.sh on the first time, it will delete any existing tables, recreate them and insert the test data. The server will start at http://localhost:3001/. You can launch with npm run watch without removing the data.
+Step 4: Launch the server with start_server.sh on the first time, it will delete any existing tables, recreate them and insert the test data. The server will start at http://localhost:3001/. You can launch with npm run watch without removing the data.
 
 # Models-table
 **GET: /api/models/**
