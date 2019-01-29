@@ -1,7 +1,7 @@
 const modelsRouter = require('express').Router()
 
 // Gets pooling from utils
-const pool = require('../utils/pool').pool
+const pool = require('../utils/config').pool
 
 // Fetches all the vehicles
 modelsRouter.get('/', async (request, response) => {
@@ -55,7 +55,7 @@ modelsRouter.post('/', async (request, response) => {
 
         response.status(201).send({ response: res.rows });
     } catch (err) {
-        // In case of an error that the  program fails to catch
+        // In case of an error that the program fails to catch
         response.status(500).json({ error: 'something went wrong' })
     }
 })
