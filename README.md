@@ -27,7 +27,7 @@ Search for pg_hba.conf file. On Linux it should be located in /etc/postgresql/10
 
 local all postgres md5
 
-Make sure that it's 'md5', and not something else. This will allow us to use server connection locally.
+Make sure that 'local all postgres' exists (if not, then add it at the end of the file), and it's 'md5', and not something else. This will allow us to use server connection locally.
 Restart the server: sudo service postgresql restart.
 
 Step 3:
