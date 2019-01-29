@@ -1,5 +1,8 @@
 # FleetManager
 
+![diagram](images/diagram.png)
+
+
 # Installation
 Following instructions are directed for linux.
 
@@ -19,7 +22,7 @@ sudo -u postgres psql
 Add a password for the default user 'postgres' with the following query:
 ALTER USER postgres WITH password 'password';
 
-Now we've configured our database. If you want to create your own configuration make sure that you update /config/pool.js.
+Now we've configured our database. If you want to create your own configuration make sure that you update /utils/config.js.
 
 CREATE TABLE public.models( id SERIAL, brand character(255) NOT NULL, model character(255) NOT NULL, model_year integer NOT NULL, engine_displacement integer, engine_power integer NOT NULL, CONSTRAINT models_pkey PRIMARY KEY (id));
 
