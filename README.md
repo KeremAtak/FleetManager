@@ -18,16 +18,20 @@ Id, registration_number and model_id mustn't be null, inspection_date can be nul
 # Installation
 Following instructions are primarily meant for Linux.
 
-Step 1: Clone the project, run npm install. Install postgres to your system. Instructions can be found here: https://www.postgresql.org/download/
+Step 1: 
 
-Step 2:
+Clone the project, run npm install. Install postgres to your system. Instructions can be found here: https://www.postgresql.org/download/
+
+Step 2: 
+
 Configuring postgres can be a hassle, but I hope these instructions are found useful. Our configuration uses default user 'postgres' with password 'password'.
 
 Search for pg_hba.conf file. On Linux it should be located in /etc/postgresql/10/main/pg_hba.conf. Open it and locate the following line:
 
 local all postgres md5
 
-Make sure that 'local all postgres' exists (if not, then add it at the end of the file), and it's 'md5', and not something else. This will allow us to use server connection locally.
+If the line doesn't exist add it at the end of the file. Make also sure that it's 'md5', and not something else. This will allow us to use server connection locally.
+
 Restart the server: sudo service postgresql restart.
 
 Step 3:
