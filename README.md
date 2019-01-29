@@ -18,7 +18,7 @@ Step 1: Install postgres to your system. Instructions can be found here: https:/
 
 Step 2:
 Our configuration uses default user 'postgres' with password 'password.
-Search for pg_hba.conf file. On linux it should be located in /etc/postgresql/9.3/main/pg_hba.conf. Open it and locate the following line:
+Search for pg_hba.conf file. On Linux it should be located in /etc/postgresql/9.3/main/pg_hba.conf. Open it and locate the following line:
 local all postgres md5
 
 Make sure that it's 'md5', and not something else. This will allow us to use server connection locally.
