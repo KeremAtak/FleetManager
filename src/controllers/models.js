@@ -117,7 +117,7 @@ modelsRouter.get('/brand/:brand', async (request, response) => {
     const brand = request.params.brand
     try {
         const res = await pool.query(
-            'SELECT * FROM models ' + 
+            'SELECT * FROM models ' +
             'WHERE UPPER(brand) = UPPER($1)', [brand])
         if (res.rows.length === 0) {
             response.status(400).json({ error: 'malformatted brand' })
@@ -152,8 +152,8 @@ modelsRouter.get('/year/:min/:max', async (request, response) => {
     const max = parseInt(request.params.max)
     try {
         const res = await pool.query(
-            'SELECT * FROM models ' + 
-            'WHERE model_year ' + 
+            'SELECT * FROM models ' +
+            'WHERE model_year ' +
             'BETWEEN $1 AND $2', [min, max])
         response.status(200).json(res.rows)
     } catch (err) {
