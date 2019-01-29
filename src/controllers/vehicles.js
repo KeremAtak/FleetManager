@@ -48,15 +48,6 @@ vehiclesRouter.post('/', async (request, response) => {
       response.status(400).json({ error: 'model id missing' })
     }
 
-    // We must verify that the model does exist.
-    // These lines can be removed if verification is done elsewhere
-    const model = await pool.query(
-      'SELECT * FROM models ' +
-      'WHERE id = $1', [model_id])
-    if (model.rows.length === 0) {
-      response.status(400).json({ error: 'malformatted model id' })
-    }
-
     const res = await pool.query(
       'INSERT INTO vehicles(registration_number, inspection_date, model_id) ' +
       'VALUES (UPPER($1), $2, $3) ' +
@@ -80,15 +71,6 @@ vehiclesRouter.put('/:id', async (request, response) => {
       response.status(400).json({ error: 'registration number missing' })
     } else if (model_id === undefined) {
       response.status(400).json({ error: 'model year missing' })
-    }
-
-    // We must verify that the model does exist.
-    // These lines can be removed if verification is done elsewhere
-    const model = await pool.query(
-      'SELECT * FROM models ' +
-      'WHERE id = $1', [model_id])
-    if (model.rows.length === 0) {
-      response.status(400).json({ error: 'malformatted model id' })
     }
 
     const res = await pool.query(
