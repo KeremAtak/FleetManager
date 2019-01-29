@@ -39,7 +39,6 @@ vehiclesRouter.get('/:id', async (request, response) => {
 
 // Creates a new vehicle
 vehiclesRouter.post('/', async (request, response) => {
-
   try {
     const { registration_number, inspection_date, model_id } = request.body
 
@@ -53,7 +52,7 @@ vehiclesRouter.post('/', async (request, response) => {
     // These lines can be removed if verification is done elsewhere
     const model = await pool.query(
       'SELECT * FROM models ' +
-      'WHERE id = $1', [model_id]);
+      'WHERE id = $1', [model_id])
     if (model.rows.length === 0) {
       response.status(400).json({ error: 'malformatted model id' })
     }
@@ -64,7 +63,7 @@ vehiclesRouter.post('/', async (request, response) => {
       'RETURNING *',
       [registration_number, inspection_date, model_id])
 
-    response.status(201).send({ response: res.rows });
+    response.status(201).send({ response: res.rows })
   } catch (err) {
     // In case of an error that the program fails to catch
     response.status(500).json({ error: 'something went wrong' })
@@ -87,7 +86,7 @@ vehiclesRouter.put('/:id', async (request, response) => {
     // These lines can be removed if verification is done elsewhere
     const model = await pool.query(
       'SELECT * FROM models ' +
-      'WHERE id = $1', [model_id]);
+      'WHERE id = $1', [model_id])
     if (model.rows.length === 0) {
       response.status(400).json({ error: 'malformatted model id' })
     }
@@ -102,7 +101,7 @@ vehiclesRouter.put('/:id', async (request, response) => {
       response.status(400).json({ error: 'malformatted id' })
     }
 
-    response.status(200).send({ response: res.rows });
+    response.status(200).send({ response: res.rows })
   } catch (err) {
     // In case of an error that program fails to catch
     response.status(500).json({ error: 'something went wrong' })
@@ -120,7 +119,7 @@ vehiclesRouter.delete('/:id', async (request, response) => {
     if (res.rows.length === 0) {
       response.status(400).json({ error: 'malformatted id' })
     }
-    response.status(200).send({ response: res.rows });
+    response.status(200).send({ response: res.rows })
   } catch (err) {
     // In case of an error that program fails to catch
     response.status(500).json({ error: 'something went wrong' })

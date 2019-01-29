@@ -53,7 +53,7 @@ modelsRouter.post('/', async (request, response) => {
       'RETURNING *',
       [brand, model, model_year, engine_displacement, engine_power])
 
-    response.status(201).send({ response: res.rows });
+    response.status(201).send({ response: res.rows })
   } catch (err) {
     // In case of an error that the program fails to catch
     response.status(500).json({ error: 'something went wrong' })
@@ -87,7 +87,7 @@ modelsRouter.put('/:id', async (request, response) => {
     if (res.rows.length === 0) {
       response.status(400).json({ error: 'malformatted id' })
     }
-    response.status(200).send({ response: res.rows });
+    response.status(200).send({ response: res.rows })
   } catch (err) {
     // In case of an error that program fails to catch
     response.status(500).json({ error: 'something went wrong' })
@@ -105,7 +105,7 @@ modelsRouter.delete('/:id', async (request, response) => {
     if (res.rows.length === 0) {
       response.status(400).json({ error: 'malformatted id' })
     }
-    response.status(200).send({ response: res.rows });
+    response.status(200).send({ response: res.rows })
   } catch (err) {
     // In case of an error that program fails to catch
     response.status(500).json({ error: 'something went wrong' })
@@ -161,5 +161,4 @@ modelsRouter.get('/year/:min/:max', async (request, response) => {
     response.status(500).json({ error: 'something went wrong' })
   }
 })
-
 module.exports = modelsRouter
