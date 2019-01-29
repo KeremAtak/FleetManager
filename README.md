@@ -36,12 +36,15 @@ Step 3: Launch the server with start_server.sh on the first time, it will delete
 
 # Models-table
 GET: /api/models/
+
 This will fetch all individual models in the fleet.
 
 GET: /api/models/:id
+
 This will fetch a single model in the fleet where the id is a parameter
 
 POST: /api/models/
+
 Post will create a new model to the fleet. This can be joined with vehicles-table to create a new vehicle.
 
 Insert following data as raw JSON on Postman:
@@ -57,6 +60,7 @@ Insert following data as raw JSON on Postman:
 ![model-post](images/model-post.png)
 
 PUT: /api/models/:id
+
 Updates a single model in the fleet where the id is a parameter
 
 Insert following data as raw JSON on Postman
@@ -72,6 +76,7 @@ Insert following data as raw JSON on Postman
 ![model-put](images/model-put.png)
 
 DELETE: /api/models/:id
+
 Deletes a single model from the fleet where the id is a parameter
 
 
@@ -81,21 +86,26 @@ GET: /api/models/brand/:brand
 Fetches all models where the name of the brand is brand-parameter.
 
 GET: /api/models/model/:model
+
 Fetches all models where the name of the model is model-parameter.
 
 GET: /api/models/year/:min/:max
+
 Fetches all models created between min-and max-parameters. 
 
 # Vehicles-table
 /api/vehicles
 
 GET: /api/vehicles/
+
 This will fetch all vehicles in the fleet. The vehicle-table is joined with a model!
 
 GET: /api/vehicles/:id
+
 This will fetch a single vehicle in the fleet where the id is a parameter
 
 POST: /api/vehicles
+
 Post will create a new vehicle to the fleet. This must be joined with a model.
 
 Insert following data as raw JSON on postman:
@@ -107,6 +117,7 @@ Insert following data as raw JSON on postman:
 }
 
 PUT: /api/vehicles/:id
+
 Updates a single model in the fleet where the id is a parameter
 Insert following data as raw JSON on postman
 
@@ -117,13 +128,17 @@ Insert following data as raw JSON on postman
 }
 
 DELETE: /api/vehicles/:id
+
 Deletes a single model from the fleet where the id is a parameter
 
 GET: /api/vehicles/brand/:brand
+
 Fetches all vehicles where the name of the brand is brand-parameter.
 
 GET: /api/vehicles/model/:model
+
 Fetches all vehicles where the name of the model is model-parameter.
 
 GET: /api/vehicles/year/:min/:max
+
 Fetches all vehicles created between min-and max-parameters. 
