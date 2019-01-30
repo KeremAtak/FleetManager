@@ -4,7 +4,7 @@ const modelsRouter = require('express').Router()
 // Gets pooling from utils
 const pool = require('../utils/config').pool
 
-// Fetches all the vehicles
+// Fetches all models
 modelsRouter.get('/', async (request, response) => {
   try {
     const res = await pool.query('SELECT * FROM models')
@@ -15,7 +15,7 @@ modelsRouter.get('/', async (request, response) => {
   }
 })
 
-// Fetches a single vehicle using the id-parameter
+// Fetches a single model using the id-parameter
 modelsRouter.get('/:id', async (request, response) => {
   try {
     const id = parseInt(request.params.id)
@@ -32,7 +32,7 @@ modelsRouter.get('/:id', async (request, response) => {
   }
 })
 
-// Creates a new vehicle
+// Creates a new model
 modelsRouter.post('/', async (request, response) => {
   try {
     const { brand, model, model_year, engine_displacement, engine_power } = request.body
@@ -60,7 +60,7 @@ modelsRouter.post('/', async (request, response) => {
   }
 })
 
-// Fetches a single vehicle using the id-parameter
+// Fetches a single model using the id-parameter
 // Current execution asks you to replace all data
 modelsRouter.put('/:id', async (request, response) => {
   try {
@@ -94,7 +94,7 @@ modelsRouter.put('/:id', async (request, response) => {
   }
 })
 
-// Deletes a single vehicle using the id-parameter
+// Deletes a single model using the id-parameter
 modelsRouter.delete('/:id', async (request, response) => {
   try {
     const id = parseInt(request.params.id)
@@ -112,7 +112,7 @@ modelsRouter.delete('/:id', async (request, response) => {
   }
 })
 
-// Fetches all vehicles with a certain brand
+// Fetches all model with a certain brand
 modelsRouter.get('/brand/:brand', async (request, response) => {
   const brand = request.params.brand
   try {
@@ -129,7 +129,7 @@ modelsRouter.get('/brand/:brand', async (request, response) => {
   }
 })
 
-// Fetches all vehicles with a certain model
+// Fetches all model with a certain model
 modelsRouter.get('/model/:model', async (request, response) => {
   const model = request.params.model
   try {
@@ -146,7 +146,7 @@ modelsRouter.get('/model/:model', async (request, response) => {
   }
 })
 
-// Fetches all vehicles created between years min and max
+// Fetches all models created between years min and max
 modelsRouter.get('/year/:min/:max', async (request, response) => {
   const min = parseInt(request.params.min)
   const max = parseInt(request.params.max)

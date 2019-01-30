@@ -4,7 +4,7 @@ const vehiclesRouter = require('express').Router()
 // Gets pooling from utils
 const pool = require('../utils/config').pool
 
-// Fetches all the vehicles
+// Fetches all vehicles
 vehiclesRouter.get('/', async (request, response) => {
   try {
     const res = await pool.query(
@@ -70,7 +70,7 @@ vehiclesRouter.put('/:id', async (request, response) => {
     if (registration_number === undefined) {
       response.status(400).json({ error: 'registration number missing' })
     } else if (model_id === undefined) {
-      response.status(400).json({ error: 'model year missing' })
+      response.status(400).json({ error: 'model id missing' })
     }
 
     const res = await pool.query(
