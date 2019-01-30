@@ -2,7 +2,9 @@
 
 The provided task is done with Node.js and Postgresql. 
 
-My solution has two tables; Models and Vehicles. The original solution that I had developed (can be found on older commits) had a single table, and this could be a better solution if the cars are mostly unique. However we're going to make the assumption that this is a big fleet with lots of cars of the same model; it's also why I picked Postgres.
+My solution has two tables; Models and Vehicles. The original solution that I had developed (can be found on older commits) had a single table, and that could be a better solution if the cars are mostly unique. However we're going to make an assumption that this is a big fleet with lots of cars of the same model; it's also why I picked Postgres.
+
+![diagram](images/diagram.png)
 
 Models represents entities which contains general information about the vehicle. A single car dealership could have dozens of vehicles of the same model (or a factory with thousands of them), and it would be inefficient to have same information on several tables if it stays the same. 
 
@@ -11,9 +13,6 @@ Id, brand, model, model_year and engine_power mustn't be null, engine_displaceme
 Vehicles contains information that makes vehicles unique. Currently it has registration number, inspection date and a foreign key referring which to the car it represents. This table is joined with Models in the backend.
 
 Id, registration_number and model_id mustn't be null, inspection_date can be null if the car hasn't had an inspection yet. Registration_number isn't required to be unique because changing plate from one car to another could become a hassle database-wise.
-
-![diagram](images/diagram.png)
-
 
 # Installation
 Following instructions are primarily meant for Linux.
